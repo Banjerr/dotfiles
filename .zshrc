@@ -98,8 +98,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias weather="ansiweather | lolcat"
-alias l="ls | lolcat"
+alias l="ls -la | lolcat"
 alias gstat="git status | lolcat"
+alias gpull="git pull | lolcat"
+alias gall="git add . | lolcat"
+alias forecast="curl wttr.in/30188"
+alias moon="curl http://wttr.in/Moon"
+
+prompt_context() {
+  # Custom (Random emoji)
+  emojis=("⚡️" "🔥" "💀" "👽" "👾" "😎" "🐸" "🐵" "🦄" "🌈" "🚀" "🌙" "🤠" "🧙 ")
+  RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
+  prompt_segment black default "${emojis[$RAND_EMOJI_N]} "
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
