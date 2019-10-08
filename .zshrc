@@ -104,6 +104,11 @@ alias gpull="git pull | lolcat"
 alias gall="git add . | lolcat"
 alias forecast="curl wttr.in/30188"
 alias moon="curl http://wttr.in/Moon"
+alias crypto="curl rate.sx"
+alias starwars="nc towel.blinkenlights.nl 23"
+function qrcode () {
+    curl qrenco.de/$1
+}
 
 prompt_context() {
   # Custom (Random emoji)
